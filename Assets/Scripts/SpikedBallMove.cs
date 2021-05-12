@@ -19,23 +19,30 @@ public class SpikedBallMove : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(_hingeJoint.jointAngle > _hingeJoint.limits.max && _moveLeft)
+        UpDown();
+    }
+
+    private void UpDown()
+    {
+        if (_hingeJoint.jointAngle > _hingeJoint.limits.max && _moveLeft)
         {
-            var motor = _hingeJoint.motor;
-            motor.motorSpeed *= -1;
-            _hingeJoint.motor = motor;
+            Movement();
             _moveLeft = false;
             _moveRight = true;
         }
 
         if (_hingeJoint.jointAngle < _hingeJoint.limits.min && _moveRight)
         {
-            var motor = _hingeJoint.motor;
-            motor.motorSpeed *= -1;
-            _hingeJoint.motor = motor;
+            Movement();
             _moveLeft = true;
             _moveRight = false;
         }
     }
-    
+
+    private void Movement()
+    {
+        var motor = _hingeJoint.motor;
+        motor.motorSpeed *= -1;
+        _hingeJoint.motor = motor;
+    }
 }
