@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SpikedBallMove : MonoBehaviour
@@ -8,7 +6,6 @@ public class SpikedBallMove : MonoBehaviour
     private bool _moveLeft;
     private bool _moveRight;
 
-    // Start is called before the first frame update
     void Start()
     {
         _hingeJoint = GetComponent<HingeJoint2D>();
@@ -16,7 +13,6 @@ public class SpikedBallMove : MonoBehaviour
         _moveRight = false;
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         UpDown();
@@ -24,25 +20,27 @@ public class SpikedBallMove : MonoBehaviour
 
     private void UpDown()
     {
+        // Gameobject on its max point
         if (_hingeJoint.jointAngle > _hingeJoint.limits.max && _moveLeft)
         {
             Movement();
-            _moveLeft = false;
-            _moveRight = true;
         }
 
+        // Gameobject on its min point
         if (_hingeJoint.jointAngle < _hingeJoint.limits.min && _moveRight)
         {
             Movement();
-            _moveLeft = true;
-            _moveRight = false;
         }
     }
 
+    // Changing direction of gameobject
     private void Movement()
     {
         var motor = _hingeJoint.motor;
         motor.motorSpeed *= -1;
         _hingeJoint.motor = motor;
+
+        _moveLeft = !_moveLeft;
+        _moveRight = !_moveRight;
     }
 }
