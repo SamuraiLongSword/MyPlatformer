@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1933240359424412712
+--- !u!1 &8317898071608104869
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,38 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1933240359424412711}
-  - component: {fileID: 1933240359424412710}
-  - component: {fileID: 1933240359424412713}
-  - component: {fileID: 6378010570328211599}
-  m_Layer: 8
-  m_Name: Apple
-  m_TagString: Apple
+  - component: {fileID: 7342194535702301853}
+  - component: {fileID: 2259897695885516298}
+  - component: {fileID: 6874197813526482024}
+  - component: {fileID: 9115632471776604219}
+  - component: {fileID: 6392953442088071739}
+  m_Layer: 0
+  m_Name: Projectile
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1933240359424412711
+--- !u!4 &7342194535702301853
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1933240359424412712}
+  m_GameObject: {fileID: 8317898071608104869}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.843, y: 1.15, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalPosition: {x: -6.661, y: -3.228, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1933240359424412710
+--- !u!212 &2259897695885516298
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1933240359424412712}
+  m_GameObject: {fileID: 8317898071608104869}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7293598183456022363, guid: 815e51deae6c36140a67d44cb560160a, type: 3}
+  m_Sprite: {fileID: 3776312371561069292, guid: ce6781062d96a52408926bafddb7d661, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -84,32 +85,47 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &1933240359424412713
-Animator:
-  serializedVersion: 3
+--- !u!114 &6874197813526482024
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1933240359424412712}
+  m_GameObject: {fileID: 8317898071608104869}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2878d0380786f7649a356c06943c2358, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!60 &6378010570328211599
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2e5dbe93de31604d82e64f6c9b5f043, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 1
+--- !u!50 &9115632471776604219
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8317898071608104869}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!60 &6392953442088071739
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1933240359424412712}
+  m_GameObject: {fileID: 8317898071608104869}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -128,17 +144,9 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.009677478, y: 0.051122006}
-      - {x: 0.010949998, y: 0.07097627}
-      - {x: -0.009874767, y: 0.089874774}
-      - {x: -0.029634727, y: 0.089472905}
-      - {x: -0.029593242, y: 0.07111384}
-      - {x: -0.04929965, y: 0.07115043}
-      - {x: -0.06093414, y: 0.05823463}
-      - {x: -0.060580965, y: -0.008234629}
-      - {x: -0.044578698, y: -0.035056986}
-      - {x: -0.03, y: -0.049168672}
-      - {x: 0.031412233, y: -0.04952175}
-      - {x: 0.060227785, y: -0.008576427}
-      - {x: 0.059874926, y: 0.029293843}
-      - {x: 0.03953293, y: 0.049624387}
+    - - {x: -0.08992611, y: 0.05954106}
+      - {x: -0.09080134, y: 0.0015398078}
+      - {x: -0.04016666, y: -0.06080146}
+      - {x: 0.038928565, y: -0.0593967}
+      - {x: 0.088928565, y: 0.0012380984}
+      - {x: 0.088928565, y: 0.0593967}

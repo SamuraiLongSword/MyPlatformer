@@ -29,5 +29,6 @@ public class BoxEffector : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
 
         if(BoxWithEffectorPrefab != null) Destroy(BoxWithEffectorPrefab);
+        Destroy(gameObject, 0.5f);
     }
 }

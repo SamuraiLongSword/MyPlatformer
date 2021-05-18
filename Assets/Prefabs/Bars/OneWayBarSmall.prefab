@@ -175,7 +175,7 @@ GameObject:
   - component: {fileID: 6439395300550987064}
   - component: {fileID: 6801222788158872268}
   - component: {fileID: 5999851912339110272}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: OneWayBarSmall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
