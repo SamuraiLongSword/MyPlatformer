@@ -8,14 +8,12 @@ public class LevelCanvas : MonoBehaviour
     [SerializeField] private Text AppleText;
     [SerializeField] private Text AgaricText;
     [SerializeField] private HealthController Player;
-    [SerializeField] private Sprite[] Levels;
     [SerializeField] private Image LevelImage;
     [SerializeField] private GameObject ReplayPanel;
 
     private void Start()
     {
         GetCanvasText();
-        LevelImage.sprite = Levels[SceneManager.GetActiveScene().buildIndex - 1];
     }
 
     private void Update()
@@ -26,7 +24,7 @@ public class LevelCanvas : MonoBehaviour
 
     private void GetCanvasText()
     {
-        HPText.text = "HP : " + Player.GetHP;
+        HPText.text = "HP   : " + Player.GetHP;
         AppleText.text = ": " + ApplePicker.AppleCounter;
         AgaricText.text = ": " + AgaricCounter.Counter + "/2";
     }
