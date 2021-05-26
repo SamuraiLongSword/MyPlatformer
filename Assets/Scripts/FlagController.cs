@@ -1,12 +1,11 @@
-using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Animator))]
 
 public class FlagController : MonoBehaviour
 {
     [SerializeField] private GameObject[] Agarics;
+    [SerializeField] private LevelCanvas Canvas;
 
     private Animator _animator;
     private bool _flagIsActive;
@@ -40,14 +39,7 @@ public class FlagController : MonoBehaviour
         {
             _animator.SetTrigger("FlagTouched");
 
-            StartCoroutine(LoadNextLevel());
+            Canvas.SendMessage("EndLvlPopup");
         }
-    }
-
-    private IEnumerator LoadNextLevel()
-    {
-        yield return new WaitForSeconds(1);
-
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

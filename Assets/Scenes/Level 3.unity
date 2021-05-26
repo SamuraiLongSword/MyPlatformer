@@ -50438,6 +50438,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6951262253060681024, guid: 0d2f3e2f96a78f34f977b7d68bf91243, type: 3}
+      propertyPath: Canvas
+      value: 
+      objectReference: {fileID: 1639929449}
+    - target: {fileID: 6951262253060681024, guid: 0d2f3e2f96a78f34f977b7d68bf91243, type: 3}
       propertyPath: Agarics.Array.data[0]
       value: 
       objectReference: {fileID: 418430053}
@@ -56796,6 +56800,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e30d4fab4693074bbb3b2999930d820, type: 3}
+--- !u!114 &1639929449 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 108066434655600151, guid: 4e30d4fab4693074bbb3b2999930d820, type: 3}
+  m_PrefabInstance: {fileID: 1639929448}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4d9199d56e074f43ad84fdf3b8a4261, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1648399675
 GameObject:
   m_ObjectHideFlags: 0

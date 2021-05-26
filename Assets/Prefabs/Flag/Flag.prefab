@@ -119,6 +119,7 @@ MonoBehaviour:
   Agarics:
   - {fileID: 6569181913530880238, guid: 1c5e85709dffc6b4f81c88b12353dc01, type: 3}
   - {fileID: 6569181913530880238, guid: 1c5e85709dffc6b4f81c88b12353dc01, type: 3}
+  Canvas: {fileID: 108066434655600151, guid: 4e30d4fab4693074bbb3b2999930d820, type: 3}
 --- !u!61 &2867131268176957849
 BoxCollider2D:
   m_ObjectHideFlags: 0

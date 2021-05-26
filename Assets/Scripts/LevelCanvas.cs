@@ -11,9 +11,16 @@ public class LevelCanvas : MonoBehaviour
     [SerializeField] private Image LevelImage;
     [SerializeField] private GameObject ReplayPanel;
 
+    [SerializeField] private Text EndLvlAppleText;
+    [SerializeField] private Text EndLvlEnemyText;
+    [SerializeField] private GameObject EndLvlPanel;
+
+    private PlayerInput _input;
+
     private void Start()
     {
         GetCanvasText();
+        _input = Player.GetComponent<PlayerInput>();
     }
 
     private void Update()
@@ -27,6 +34,9 @@ public class LevelCanvas : MonoBehaviour
         HPText.text = "HP   : " + Player.GetHP;
         AppleText.text = ": " + ApplePicker.AppleCounter;
         AgaricText.text = ": " + AgaricCounter.Counter + "/2";
+
+        EndLvlAppleText.text = "Apples collected: " + ApplePicker.AppleCounter;
+        EndLvlEnemyText.text = "Enemies destroyed: " + AgaricCounter.Counter;
     }
 
     private void CheckPlayerDead()
@@ -40,5 +50,21 @@ public class LevelCanvas : MonoBehaviour
     public void Replay()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void ToMenu()
+    {
+        SceneManager.LoadScene("_StartScene_");
+    }
+
+    public void NextLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    private void EndLvlPopup()
+    {
+        EndLvlPanel.SetActive(true);
+        _input.ChangeInputAccess(false);
     }
 }
