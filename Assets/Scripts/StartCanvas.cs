@@ -1,11 +1,11 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class FinishCanvas : MonoBehaviour
+public class StartCanvas : MonoBehaviour
 {
-    public void StartOver()
+    public void StartGame()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("Level 1");
     }
 
     public void Exit()
