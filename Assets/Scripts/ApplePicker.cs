@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class ApplePicker : MonoBehaviour
 {
+    [SerializeField] private AudioSource AppleSound;
+
     public static int AppleCounter;
 
     private void Awake()
@@ -13,6 +15,7 @@ public class ApplePicker : MonoBehaviour
     {
         if(collision.gameObject.tag == "Apple")
         {
+            AppleSound.Play();
             collision.GetComponent<Animator>().SetTrigger("AppleCollected");
             Destroy(collision.gameObject, 0.3f);
             AppleCounter++;

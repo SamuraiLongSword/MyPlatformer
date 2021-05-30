@@ -26,19 +26,19 @@ public class CutScene : MonoBehaviour
         CutSceneAnimator.SetTrigger("ChangeCam");
         StartCoroutine(PrintText("This is the first enemy", TextEnemy1));
 
-        yield return new WaitForSeconds(6f);
+        yield return new WaitForSeconds(3f);
 
         TextEnemy1.gameObject.SetActive(false);
         CutSceneAnimator.SetTrigger("ChangeCam");
         StartCoroutine(PrintText("This is the second enemy", TextEnemy2));
 
-        yield return new WaitForSeconds(6f);
+        yield return new WaitForSeconds(3f);
 
         TextEnemy2.gameObject.SetActive(false);
         CutSceneAnimator.SetTrigger("ChangeCam");
         StartCoroutine(PrintText("Destroy both enemies and the flag becomes to activated", TextFlag));
 
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(6);
 
         TextFlag.gameObject.SetActive(false);
         CutSceneAnimator.SetTrigger("ChangeCam");
@@ -55,7 +55,7 @@ public class CutScene : MonoBehaviour
         {
             text.text += c;
 
-            yield return new WaitForSeconds(0.15f);
+            yield return new WaitForSeconds(0.07f);
         }
     }
 }

@@ -9,6 +9,7 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private GameObject OverlapGameObject;
     [SerializeField] private LayerMask GroundMask;
     [SerializeField] private AnimationCurve Curve;
+    [SerializeField] private AudioSource JumpSound;
 
     private Animator _animator;
     private PlayerInput _pInput;
@@ -69,6 +70,8 @@ public class PlayerMove : MonoBehaviour
             _rBody.velocity = jump;
 
             _animator.SetTrigger("DudeJump");
+
+            JumpSound.Play();
         }
     }
 }

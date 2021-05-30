@@ -5,6 +5,7 @@ using UnityEngine;
 public class HealthController : MonoBehaviour
 {
     [SerializeField] private float MaxHealth;
+    [SerializeField] private AudioSource HitSound;
 
     private Animator _animator;
     private float _currentHealth;
@@ -18,6 +19,8 @@ public class HealthController : MonoBehaviour
     public void TakeDamage(float damage)
     {
         _currentHealth -= damage;
+
+        if (GetComponent<PlayerInput>() != null) HitSound.Play();
 
         if (_currentHealth < 0) _currentHealth = 0;
 

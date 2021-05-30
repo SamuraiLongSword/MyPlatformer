@@ -15,6 +15,9 @@ public class LevelCanvas : MonoBehaviour
     [SerializeField] private Text EndLvlEnemyText;
     [SerializeField] private GameObject EndLvlPanel;
 
+    [SerializeField] private AudioSource WinSound;
+    [SerializeField] private AudioSource ClickSound;
+
     private PlayerInput _input;
 
     private void Start()
@@ -64,7 +67,13 @@ public class LevelCanvas : MonoBehaviour
 
     private void EndLvlPopup()
     {
+        WinSound.Play();
         EndLvlPanel.SetActive(true);
         _input.ChangeInputAccess(false);
+    }
+
+    public void ClickPlay()
+    {
+        ClickSound.Play();
     }
 }

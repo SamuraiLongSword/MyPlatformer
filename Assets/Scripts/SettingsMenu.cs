@@ -7,10 +7,18 @@ public class SettingsMenu : MonoBehaviour
 {
     [SerializeField] private AudioMixer audioMixer;
     [SerializeField] private Dropdown ResolutionDropdown;
+    [SerializeField] private Slider VolumeSlider;
 
     private Resolution[] _resolutions;
 
     private void Start()
+    {
+        SetResolutionOnStart();
+
+        audioMixer.SetFloat("Volume", VolumeSlider.value);
+    }
+
+    private void SetResolutionOnStart()
     {
         _resolutions = Screen.resolutions;
 
@@ -25,7 +33,7 @@ public class SettingsMenu : MonoBehaviour
             string option = _resolutions[i].width + " x " + _resolutions[i].height;
             options.Add(option);
 
-            if(_resolutions[i].width == Screen.currentResolution.width &&
+            if (_resolutions[i].width == Screen.currentResolution.width &&
                _resolutions[i].height == Screen.currentResolution.height)
             {
                 currentResolutionIndex = i;
